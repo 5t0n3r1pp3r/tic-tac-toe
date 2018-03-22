@@ -469,7 +469,7 @@ void setup() {
  * ------------------------------------Main Program
  */
 void loop()
-{ //Debug();
+{ Debug();
   CHECK_PIN_STATE();
   CHECK_BUTTON();
   ledDisp();
