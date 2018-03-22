@@ -4,7 +4,8 @@
  * march 2018
  * one wire kepad 3x3 on A5
  * button resistances 
- *A5 ~1/5k 
+ *A5 
+ *~1/5k 
  *negative 0 button 
  *~200ohm
  *button 1
@@ -35,6 +36,7 @@
 int bval = 0;
 int serialenable = 0;
 bool tstdone = false;
+int keypadPin = A5;
 /*
  * ------------------------------------Led Pins 
  */
@@ -371,7 +373,7 @@ void next() {
  * -----------------------------------Button Status Test 
  */
 void CHECK_BUTTON() {
-  bval = analogRead(A5);
+  bval = analogRead(keypadPin);
   delay(10);
   if (bval == 0 && ledstate[0] == 0) { //0
     Serial.println("B1");
